@@ -1,11 +1,12 @@
 # nixpacks.toml
 
 [phases.setup]
-nixPkgs = ["python311", "git"]
+# Add "pip" to the list of packages to install
+nixPkgs = ["python311", "pip", "git"]
 
 [phases.install]
-# Use "python -m pip" to ensure the correct pip is used
-cmds = ["python -m pip install -r requirements.txt"]
+# This command is correct and will work once pip is installed
+cmds = ["pip install -r requirements.txt"]
 
 [phases.start]
 cmd = "python bot.py"
